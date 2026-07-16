@@ -6,7 +6,29 @@
 ## 2. Abstract
 Agriculture remains the backbone of our economy, yet many farmers struggle with unpredictable weather patterns, unsuitable crop choices, and lack of direct market access. This project provides a "Smart" solution—an integrated web application that uses environmental data (Nitrogen, Phosphorus, Potassium, Temperature, and Humidity) to recommend the best crops for a specific land area. Additionally, it features a marketplace module that removes middlemen, allowing farmers to list products and interact with buyers directly.
 
-## 3. Core Modules & Functionalities
+## 3. 📸 Project Screenshots
+
+### 🏠 Home Page
+![Home](screenshots/home.jpeg)
+
+### 🔐 Login Page
+![Login](screenshots/login.jpeg)
+
+### 📝 Register Page
+![Register](screenshots/register.jpeg)
+
+### 🔑 Forgot Password
+![Forgot Password](screenshots/password.jpeg)
+
+### 🌱 Crop Recommendation
+![Crop Recommendation](screenshots/crop-recommendation.jpeg)
+
+### 🛒 Marketplace
+![Marketplace](screenshots/marketplace.jpeg)
+
+### 🌾 Sell Crop & Cart
+![Sell Crop](screenshots/sell-crop.jpeg)
+## 4. Core Modules & Functionalities
 
 ### 🌾 Intelligent Crop Recommendation
 *   **Rule-based Analysis**: Analyzes soil nutrients (NPK) and climate data (Temperature, Humidity) to suggest the most suitable crop (Rice, Wheat, Corn, etc.).
@@ -23,7 +45,7 @@ Agriculture remains the backbone of our economy, yet many farmers struggle with 
 *   **Personalized Experience**: Secure login/registration system with a dedicated dashboard to track listed products and saved recommendations.
 *   **Secure Authentication**: Backend-verified login and password reset functionalities.
 
-## 4. Technical Architecture
+## 5. Technical Architecture
 
 ### Frontend (User Interface)
 *   **HTML5 & CSS3**: Utilizes a modern "Neo-Brutalism" and professional aesthetic for high readability and engagement.
@@ -34,7 +56,7 @@ Agriculture remains the backbone of our economy, yet many farmers struggle with 
 *   **Python (Flask)**: A lightweight web framework managing API requests, user authentication, and data persistence.
 *   **JSON-based Storage**: Currently uses a structured JSON system for managing user profiles and market listings, ensuring simplicity and speed.
 
-## 5. How to Run Locally
+## 6. How to Run Locally
 
 ### Prerequisites
 - Python 3.x installed
@@ -60,7 +82,7 @@ Agriculture remains the backbone of our economy, yet many farmers struggle with 
    ```
 5. Open your browser and go to `http://127.0.0.1:5000` (or whichever port Flask is running on).
 
-## 6. Future Scope & Roadmap
+## 7. Future Scope & Roadmap
 - **Machine Learning Integration**: Transitioning to a trained ML model (Random Forest or XGBoost) for higher prediction accuracy.
 - **IoT & Sensor Integration**: Connecting with real-time soil sensors to automatically fetch NPK levels.
 - **Voice-Activated AI Assistant**: Multilingual voice support for accessibility.
