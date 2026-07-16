@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Marketplace | Direct Farmer Connection</title>
+    <meta name="description" content="A premium agricultural marketplace for fresh harvests. Buy Rice, Wheat, and Corn directly from farmers. Powered by SmartAgri Control Hub.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/market.css">
+</head>
+<body class="market-body">
+
+    <!-- 1. Header Section -->
+    <header class="market-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="leaf"></i>
+                    <span>Smart Agri Assistant</span>
+                </div>
+                <nav class="market-nav">
+                    <a href="dashboard.html" class="nav-btn"><i data-lucide="layout-grid"></i> Dashboard</a>
+                    <div class="cart-icon-wrapper" onclick="toggleCart()">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </div>
+                    <a href="login.html" class="nav-btn">Logout</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content" data-aos="fade-up">
+            <h1>Smart Crop Marketplace <span class="wheat-emoji">🌾</span></h1>
+            <p>Fresh crops. Fair prices. Direct from farmers.</p>
+            <div class="hero-actions">
+                <a href="#available-crops" class="action-btn">Browse Crops</a>
+                <a href="sell.html" class="action-btn">Sell Your Crop</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Feature Cards Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="feature-grid">
+                
+                <article class="feature-card glass" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <h3>High Quality Harvest</h3>
+                    <p>Organically grown with optimized nutrients for premium quality crops.</p>
+                </article>
+
+                <article class="feature-card glass" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i data-lucide="tag"></i>
+                    </div>
+                    <h3>Fair Pricing</h3>
+                    <p>Transparent pricing that ensures value for both farmers and buyers.</p>
+                </article>
+
+                <article class="feature-card glass" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <h3>Fresh from Local Farms</h3>
+                    <p>Fast supply chain delivering products straight from the source.</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Product Grid Section (Main Content) -->
+    <section class="marketplace-listing" id="available-crops">
+        <div class="container">
+            <div class="section-header" data-aos="fade-right">
+                <h2>Product Showcase</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="product-grid">
+                
+                <!-- Rice Product -->
+                <article class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="../assets/rice.png" alt="Premium Rice">
+                    <div class="product-info">
+                        <h3>Premium Rice 🌾</h3>
+                        <p class="price">₹65 / kg</p>
+                        <div class="product-actions">
+                            <button class="buy-btn add-to-cart" data-name="Premium Rice" data-price="65" data-image="../assets/rice.png">Add to Cart</button>
+                            <button class="buy-btn now" data-name="Premium Rice" data-price="65">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Wheat Product -->
+                <article class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="../assets/wheat.png" alt="Golden Wheat">
+                    <div class="product-info">
+                        <h3>Golden Wheat 🌾</h3>
+                        <p class="price">₹42 / kg</p>
+                        <div class="product-actions">
+                            <button class="buy-btn add-to-cart" data-name="Golden Wheat" data-price="42" data-image="../assets/wheat.png">Add to Cart</button>
+                            <button class="buy-btn now" data-name="Golden Wheat" data-price="42">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Corn Product -->
+                <article class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="../assets/crop.png" alt="Sweet Corn">
+                    <div class="product-info">
+                        <h3>Sweet Corn 🌽</h3>
+                        <p class="price">₹35 / kg</p>
+                        <div class="product-actions">
+                            <button class="buy-btn add-to-cart" data-name="Sweet Corn" data-price="35" data-image="../assets/crop.png">Add to Cart</button>
+                            <button class="buy-btn now" data-name="Sweet Corn" data-price="35">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Cart Panel -->
+    <div id="cart-panel" class="cart-panel glass">
+        <div class="cart-header">
+            <h3>Your Shopping Cart 🛒</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Items loaded via JS -->
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: ₹<span id="cart-total-price">0</span></div>
+            <div class="cart-btns">
+                <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Notifications -->
+    <div id="notification" class="notification glass"></div>
+
+    <!-- Footer -->
+    <footer class="market-footer">
+        <div class="container">
+            <p>&copy; 2026 Smart Agri Assistant. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/market.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>

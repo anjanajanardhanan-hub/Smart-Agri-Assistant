@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Story | Smart Agri Assistant</title>
+    <meta name="description" content="A vertical storytelling journey through soil, climate, and AI-powered crop recommendation. Powered by SmartAgri Control Hub.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/crop.css">
+</head>
+<body class="crop-body">
+
+    <!-- Sticky Header -->
+    <header class="crop-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="sprout"></i>
+                    <span>Smart Agri Assistant</span>
+                </div>
+                <div class="header-nav">
+                    <a href="dashboard.html" class="nav-btn">
+                        <i data-lucide="layout-dashboard"></i> Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STORY PANELS -->
+
+    <!-- PANEL 1: Soil Foundation -->
+    <section class="story-panel panel-soil">
+        <div class="panel-overlay"></div>
+        <div class="panel-content container" data-aos="fade-up">
+            <span class="step-tag">Step 01</span>
+            <h1 class="panel-title">It Begins with the Soil</h1>
+            <p class="panel-subtitle">Understanding nutrients is the first step to success. Nitrogen, Phosphorus, and Potassium are the building blocks of every great harvest.</p>
+            <div class="soil-particles">
+                <span class="particle n">N</span>
+                <span class="particle p">P</span>
+                <span class="particle k">K</span>
+            </div>
+            <div class="scroll-indicator">
+                <i data-lucide="mouse"></i>
+                <span>Scroll to see the impact of elements</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL 2: The Elements -->
+    <section class="story-panel panel-elements">
+        <div class="panel-overlay-split"></div>
+        <div class="panel-content container" data-aos="fade-up">
+            <span class="step-tag">Step 02</span>
+            <h2 class="panel-title">Nature Decides the Outcome</h2>
+            <p class="panel-subtitle">Temperature and humidity shape your harvest. From the heat of the noon sun to the moisture in the morning air, the environment is your partner.</p>
+            <div class="elements-icons">
+                <div class="element"><i data-lucide="sun"></i><span>Heat</span></div>
+                <div class="element"><i data-lucide="cloud-rain"></i><span>Water</span></div>
+                <div class="element"><i data-lucide="wind"></i><span>Air</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL 3: AI Hub (Form Section) -->
+    <section class="story-panel panel-hub" id="hub-form">
+        <div class="panel-overlay-hub"></div>
+        <div class="panel-content container">
+            <div class="hub-header" data-aos="fade-down">
+                <span class="step-tag">Step 03</span>
+                <h2 class="panel-title">SmartAgri Control Hub</h2>
+                <p class="panel-subtitle">Enter your farm data for AI-powered insights. Let our intelligent system predict the future of your field.</p>
+            </div>
+
+            <!-- Form Card -->
+            <div class="form-wrapper" data-aos="zoom-in" data-aos-delay="200">
+                <div class="crop-card glass">
+                    <form class="analysis-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nitrogen">Nitrogen (N)</label>
+                                <input type="number" id="nitrogen" placeholder="80" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phosphorus">Phosphorus (P)</label>
+                                <input type="number" id="phosphorus" placeholder="45" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="potassium">Potassium (K)</label>
+                                <input type="number" id="potassium" placeholder="40" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature">Temp (°C)</label>
+                                <input type="number" id="temperature" placeholder="28" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="humidity">Humidity (%)</label>
+                                <input type="number" id="humidity" placeholder="80" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="soil-type">Soil Type</label>
+                                <select id="soil-type">
+                                    <option value="alluvial">Alluvial</option>
+                                    <option value="black">Black Soil</option>
+                                    <option value="red">Red Soil</option>
+                                    <option value="clayey">Clayey</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="analyzeCrop()">Analyze Crop</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL 4: Result Section -->
+    <section class="story-panel panel-result" id="result-panel" style="display: none;">
+        <div class="panel-overlay"></div>
+        <div class="panel-content container" data-aos="slide-up">
+            <span class="step-tag">Final Prediction</span>
+            <h2 class="panel-title">Your Ideal Crop 🌾</h2>
+            
+            <!-- Result Highlight Card -->
+            <div class="result-wrapper">
+                <div class="result-card glass">
+                    <div class="result-body">
+                        <div class="crop-img-container">
+                            <img id="crop-result-img" src="../assets/rice.jpeg" alt="Recommended Crop">
+                        </div>
+                        <div class="crop-display">
+                            <span class="crop-name">Rice</span>
+                            <span class="success-rate">92% Match</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                        <div class="tip-box">
+                            <i data-lucide="zap"></i>
+                            <p id="crop-tip">Best suited for high humidity and warm climate. Your soil nitrogen level is ideal for this cereal crop.</p>
+                        </div>
+                        <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+                            <button class="btn-primary" style="margin-top: 0; padding: 12px 24px; font-size: 0.9rem;" onclick="viewDetails()">View Detailed Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="dashboard.html" class="btn-return">Return to Dashboard</a>
+
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/crop.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 200
+        });
+        
+        // Init Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>

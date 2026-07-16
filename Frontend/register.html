@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Smart Agri-Assistant</title>
+    <meta name="description" content="Create your Smart Agri-Assistant account to start your journey into smart farming and AI-driven agricultural insights.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body class="register-body">
+
+    <!-- Header / Nav -->
+    <header id="header" class="register-header">
+        <nav class="container">
+            <div class="logo">
+                <i data-lucide="sprout"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;">Smart Agri-Assistant</a>
+            </div>
+            <div class="header-back">
+                <a href="index.html" class="back-link"><i data-lucide="chevron-left"></i> Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Registration Section -->
+    <main class="register-main">
+        <div class="register-container">
+            <div class="register-card">
+                <!-- Registration Intro -->
+                <div class="register-header-text text-center">
+                    <h1>Create Account</h1>
+                    <p>Start your smart farming journey today</p>
+                </div>
+                
+                <!-- Message Container for UI Feedback -->
+                <div id="messageContainer" class="message-container"></div>
+                
+                <!-- Registration Form -->
+                <form class="register-form" id="registerForm">
+                    
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="full-name" placeholder="John Doe" required>
+                            <i data-lucide="user" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                            <i data-lucide="mail" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <i data-lucide="lock" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <div class="input-with-icon">
+                            <input type="password" id="confirm-password" placeholder="••••••••" required>
+                            <i data-lucide="lock" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="location" placeholder="e.g. Bangalore, KA" required>
+                            <i data-lucide="map-pin" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Register Button -->
+                    <button type="submit" class="btn-full">Register Account</button>
+                    
+                    <!-- Login Link -->
+                    <div class="form-footer text-center">
+                        <p>Already have an account? <a href="login.html" class="form-link-bold">Login</a></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Initialize Lucide -->
+    <script src="../js/register.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

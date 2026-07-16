@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart Agri-Assistant</title>
+    <meta name="description" content="Login to your Smart Agri-Assistant account to manage your farming insights.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-body">
+
+    <!-- Header Section -->
+    <header class="login-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="sprout"></i>
+                <span>Smart Agri-Assistant</span>
+            </a>
+            <div class="header-back">
+                <a href="index.html" class="back-link"><i data-lucide="chevron-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-card">
+                <!-- Login Welcome Text -->
+                <div class="login-header-text">
+                    <h1>Welcome Back</h1>
+                    <p>Login to continue your smart farming journey</p>
+                </div>
+                
+                <!-- Message Container for UI Feedback -->
+                <div id="messageContainer" class="message-container"></div>
+                
+                <!-- Login Form -->
+                <form class="login-form" id="loginForm">
+                    
+                    <!-- Email Group -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="email" placeholder="name@farm.com" required>
+                            <i data-lucide="mail" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Password Group -->
+                    <div class="form-group">
+                        <div class="flex-between">
+                            <label for="password">Password</label>
+                            <a href="forgot.html" class="form-link">Forgot Password?</a>
+                        </div>
+                        <div class="input-with-icon">
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <i data-lucide="lock" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-full">Login to Account</button>
+                    
+                    <!-- Form Footer Links -->
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="register.html" class="form-link-bold">Register Now</a></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Initialize Lucide Icons -->
+    <script src="../js/login.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

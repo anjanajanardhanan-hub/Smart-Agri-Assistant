@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Hub | Smart Agri-Assistant</title>
+    <meta name="description"
+        content="AI-powered farming command center. Control your farm with smart insights, weather, and marketplace data.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons (as fallback and for general UI) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Futuristic Animated Background -->
+    <div class="bg-hub">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="bg-grid"></div>
+        <div class="bg-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="leaf"></i>
+                    </div>
+                    <span>SmartAgri <span class="tag">Control Hub</span></span>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-link"><i data-lucide="home"></i> Home</a>
+                    <a href="login.html" class="nav-link logout"><i data-lucide="log-out"></i> Logout</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="dashboard-container">
+        <div class="container">
+
+            <!-- Welcome Header -->
+            <div class="welcome-header">
+                <h1>Welcome back, <span class="farmer-name">Farmer 🌱</span></h1>
+                <p>System Online. All sensors connected. Insights updated 5m ago.</p>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+<!-- Weather Card -->
+<article class="dashboard-card weather-card glass">
+    <div class="card-header">
+        <h3>Environment</h3>
+        <div class="card-badge">Live</div>
+    </div>
+
+    <div class="card-content">
+        <!-- Premium Animated SVG Weather Icon -->
+        <div class="premium-icon weather-svg">
+            <svg viewBox="0 0 100 100">
+                <circle id="sun" cx="50" cy="50" r="20" fill="yellow" />
+                <path id="cloud" d="M30 65 Q30 50 45 50 Q50 35 65 50 Q80 50 80 65 Z"
+                    fill="white" fill-opacity="0.8" />
+                <rect x="48" y="75" width="4" height="15" rx="2" fill="#52b788" />
+            </svg>
+        </div>
+
+        <div class="data-block">
+            <span class="main-data" id="temp">--°C</span>
+            <span class="sub-data" id="condition">Loading...</span>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <div class="stat">
+            <i data-lucide="droplets"></i> Humidity:
+            <span id="humidity">--</span>%
+        </div>
+        <div class="stat">
+            <i data-lucide="wind"></i> Wind:
+            <span id="wind">--</span> km/h
+        </div>
+    </div>
+</article>
+
+<script src="weather.js"></script>
+                <!-- Quick Actions Card -->
+                <article class="dashboard-card actions-card glass">
+                    <div class="card-header">
+                        <h3>Command Actions</h3>
+                        <div class="card-badge">Ready</div>
+                    </div>
+                    <div class="card-content">
+                        <!-- Premium Animated SVG Action Icon -->
+                        <div class="premium-icon action-svg">
+                            <svg viewBox="0 0 100 100">
+                                <path class="lightning-bolt" d="M55 10 L35 50 L55 50 L35 90" stroke="#52b788"
+                                    stroke-width="4" fill="none" />
+                                <circle class="data-particle" r="2" fill="#ff9f1c" />
+                            </svg>
+                        </div>
+                        <div class="action-links">
+                            <a href="crop.html" class="hub-btn">
+                                <i data-lucide="sprout"></i> Crop Recommendation
+                            </a>
+                            <a href="marketplace.html" class="hub-btn">
+                                <i data-lucide="shopping-cart"></i> Go to Marketplace
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Insights Summary Card -->
+                <article class="dashboard-card insights-card glass">
+                    <div class="card-header">
+                        <h3>Farm Growth</h3>
+                        <div class="card-badge">Optimal</div>
+                    </div>
+                    <div class="card-content">
+                        <!-- Premium Animated SVG Insight Icon -->
+                        <div class="premium-icon insights-svg">
+                            <svg viewBox="0 0 100 100">
+                                <path class="plant-leaf" d="M50 80 Q40 60 50 40 Q60 60 50 80" fill="#52b788" />
+                                <path class="leaf-left" d="M50 70 Q30 60 20 40 Q40 50 50 70" fill="#2d6a4f" />
+                                <path class="leaf-right" d="M50 70 Q70 60 80 40 Q60 50 50 70" fill="#2d6a4f" />
+                                <text class="npk-text" x="40" y="55" font-size="5" fill="white">N-P-K</text>
+                                <rect class="bar b1" x="20" y="85" width="4" height="5" fill="#52b788" />
+                                <rect class="bar b2" x="28" y="82" width="4" height="8" fill="#52b788" />
+                                <rect class="bar b3" x="36" y="80" width="4" height="10" fill="#52b788" />
+                            </svg>
+                        </div>
+                        <div class="insights-summary">
+                            <div class="insight-item"> Soil Health: <span class="highlight">94%</span> </div>
+                            <div class="insight-item"> Next Harvest: <span class="highlight">14 Days</span> </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

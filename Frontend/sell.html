@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Crop | Smart Agri Assistant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/sell.css">
+</head>
+<body class="sell-body">
+
+    <!-- Header Section -->
+    <header class="market-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="leaf"></i>
+                    <span>Smart Agri Assistant</span>
+                </div>
+                <nav class="market-nav">
+                    <a href="marketplace.html" class="nav-btn"><i data-lucide="arrow-left"></i> Back to Marketplace</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Sell Your Crop <span class="emoji">🌾</span></h1>
+            <p>List your fresh produce and connect directly with buyers</p>
+        </div>
+
+        <!-- 3. Form Section (Main Card) -->
+        <div class="sell-container">
+            <div class="sell-card" data-aos="fade-up">
+                <form id="sellCropForm">
+                    <div class="form-group">
+                        <label for="farmerName">Farmer Name</label>
+                        <input type="text" id="farmerName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cropName">Crop Name</label>
+                        <input type="text" id="cropName" placeholder="Enter crop name (e.g., Rice, Wheat, Corn)" required>
+                    </div>
+
+                    <div class="price-kg-group">
+                        <div class="form-group">
+                            <label for="quantity">Quantity (kg)</label>
+                            <input type="number" id="quantity" placeholder="e.g. 500" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price (₹ per kg)</label>
+                            <input type="number" id="price" placeholder="e.g. 45" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="Your farm location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cropImage">Upload Image</label>
+                        <input type="file" id="cropImage" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="listBtn">List Your Crop</button>
+                    
+                    <!-- 4. Success Message -->
+                    <div class="success-message" id="successMsg">
+                        Your crop has been listed successfully ✅
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer script for lucide and submission handler -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/sell.js"></script>
+</body>
+</html>

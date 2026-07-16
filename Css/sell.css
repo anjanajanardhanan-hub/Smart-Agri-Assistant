@@ -1,0 +1,262 @@
+/* Sell Your Crop Page Styles - Smart Agri Assistant */
+
+:root {
+    --primary: #2d6a4f;
+    --primary-light: #52b788;
+    --secondary: #95d5b2;
+    --dark: #081c15;
+    --dark-green: #1b4332;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.sell-body {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-green) 100%);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 1. Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: url('../assets/sell.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 2. Header */
+.market-header {
+    background: rgba(8, 28, 21, 0.95);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo i {
+    color: var(--primary-light);
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-btn:hover {
+    background: var(--primary-light);
+    color: var(--dark);
+    border-color: var(--primary-light);
+}
+
+/* 3. Form Section - Glass Card */
+.sell-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.sell-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.8s ease-out forwards, float 5s ease-in-out infinite;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 15px rgba(82, 183, 136, 0.2);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.price-kg-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 4. Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 0 25px rgba(82, 183, 136, 0.6);
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(82, 183, 136, 0.15);
+    border: 1px solid var(--primary-light);
+    border-radius: 10px;
+    color: var(--primary-light);
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.success-message.active {
+    display: block;
+}
+
+/* 5. Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .price-kg-group { grid-template-columns: 1fr; }
+    .sell-card { padding: 30px 20px; }
+}

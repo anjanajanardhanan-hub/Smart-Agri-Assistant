@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | Smart Agri-Assistant</title>
+    <meta name="description" content="Reset your Smart Agri-Assistant password.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- External CSS (Reusing login.css for consistency) -->
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-body">
+
+    <!-- Header Section -->
+    <header class="login-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="sprout"></i>
+                <span>Smart Agri-Assistant</span>
+            </a>
+            <div class="header-back">
+                <a href="login.html" class="back-link"><i data-lucide="chevron-left"></i> Back to Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-card">
+                <!-- Header Text -->
+                <div class="login-header-text">
+                    <h1>Reset Password</h1>
+                    <p>Enter your email address and a new password</p>
+                </div>
+                
+                <!-- Message Container for UI Feedback -->
+                <div id="messageContainer" class="message-container"></div>
+                
+                <!-- Forgot Password Form -->
+                <form class="login-form" id="forgotForm">
+                    
+                    <!-- Email Group -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="email" placeholder="name@farm.com" required>
+                            <i data-lucide="mail" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- New Password Group -->
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <div class="input-with-icon">
+                            <input type="password" id="newPassword" placeholder="••••••••" required>
+                            <i data-lucide="lock" class="input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-full">Reset Password</button>
+                    
+                    <!-- Form Footer Links -->
+                    <div class="form-footer">
+                        <p>Remembered your password? <a href="login.html" class="form-link-bold">Login Here</a></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/forgot.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

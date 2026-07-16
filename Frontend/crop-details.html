@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Details | Smart Agri-Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/crop.css">
+    <style>
+        .page-container {
+            min-height: 100vh;
+            padding-bottom: 50px;
+            background: linear-gradient(135deg, #081c15 0%, #1b4332 100%);
+        }
+        .hero-section {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            }
+        #crop-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+        
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(8, 28, 21, 1), transparent);
+        }
+        .content-container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+            text-align: center;
+        }
+        #crop-name {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-family: 'Outfit', sans-serif;
+            color: var(--white);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .details-section {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+        .details-section h3 {
+            color: var(--primary-light, #74c69d);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            border-bottom: 2px solid rgba(116, 198, 157, 0.3);
+            padding-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+            display: inline-block;
+        }
+        .details-section p {
+            color: #d8f3dc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+        .details-section p:last-child {
+            margin-bottom: 0;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 14px 35px;
+            background: var(--primary-light, #74c69d);
+            color: var(--dark, #081c15);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(116, 198, 157, 0.3);
+            margin-bottom: 40px;
+        }
+        .btn-back:hover {
+            transform: translateY(-3px);
+            background: var(--white);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="crop-body">
+    <header class="crop-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="sprout"></i>
+                    <span>Smart Agri Assistant</span>
+                </div>
+                <div class="header-nav">
+                    <a href="crop.html" class="nav-btn">
+                        <i data-lucide="arrow-left"></i> Back to Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <div class="hero-section" data-aos="fade-down">
+            <img id="crop-image" alt="Crop Image">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="content-container" data-aos="fade-up">
+            <h2 id="crop-name"></h2>
+
+            <div class="details-section">
+                <h3>About</h3>
+                <p id="about"></p>
+
+                <h3>Best Season</h3>
+                <p id="season"></p>
+
+                <h3>Soil</h3>
+                <p id="soil"></p>
+
+                <h3>Temperature</h3>
+                <p id="temperature"></p>
+
+                <h3>Harvest Time</h3>
+                <p id="harvest"></p>
+
+                <h3>Water Needs</h3>
+                <p id="water"></p>
+            </div>
+
+            <a href="crop.html" class="btn-back">Analyze Another Crop</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/crop-details.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        lucide.createIcons();
+    </script>
+</body>
+</html>
